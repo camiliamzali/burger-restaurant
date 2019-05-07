@@ -1,9 +1,9 @@
-DROP DATABASE IF EXISTS pets_db;
-CREATE DATABASE pets_db;
+DROP DATABASE IF EXISTS burger_db;
+CREATE DATABASE burger_db;
 
-USE pets_db;
+USE burger_db;
 
-CREATE TABLE cats (
+CREATE TABLE burger (
   id INT(11) AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
   sleepy BOOLEAN DEFAULT false,
