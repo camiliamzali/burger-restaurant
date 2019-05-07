@@ -1,0 +1,85 @@
+<div class="jumbotron jumbotron-fluid bg-dark text-light p-5">
+  <h1>😺 Cats App!</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    {{!-- column for form --}}
+    <div class="col-12 col-md-3">
+      <form id="cat-form">
+        <input class="form-control" id="name-input" placeholder="Cat's Name"/>
+        <button class="btn btn-success btn-block" type="submit">
+          Add A Cat!
+        </button>
+      </form>
+    </div>
+    {{!-- end left column --}}
+    {{!-- right column to display cats--}}
+    <div class="col-12 col-md-9">
+      {{!-- make two columns in right column --}}
+      <div class="row">
+        {{!-- inner left column --}}
+        <div class="col-12 col-md-6">
+          <h2>Cats That Aren't Sleepy</h2>
+          <ul class="list-group">
+            {{!-- use handlebars to print cats that aren't sleepy --}}
+            {{#each catData}}
+              {{!-- this is the same as saying !== --}}
+              {{#unless sleepy}}
+                <li class="list-group-item d-flex">
+                  {{name}} 
+                  <span class="ml-auto">
+                    <button 
+                      data-id="{{id}}"
+                      data-sleepy="true"
+                      class="btn btn-sm btn-info update-cat"
+                      >
+                    😻 Make Sleepy
+                    </button>
+
+                    {{!-- delete cat --}}
+                    <button
+                      data-id="{{id}}"
+                      class="btn btn-sm btn-danger delete-cat"
+                    >
+                      😾 Delete Cat
+                    </button>
+                  </span>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+        {{!-- end inner left --}}
+        {{!-- inner right --}}
+        <div class="col-12 col-md-6">
+          <h2>Cats That Are Sleepy</h2>
+          <ul class="list-group">
+            {{!-- use handlebars to print cats that aren't sleepy --}}
+            {{#each catData}}
+            {{!-- this is the same as saying !== --}}
+            {{#if sleepy}}
+            <li class="list-group-item d-flex">
+              {{name}}
+              <span class="ml-auto">
+                <button data-id="{{id}}" data-sleepy="false" class="btn btn-sm btn-info update-cat">
+                  🙀 Awaken
+                </button>
+        
+                {{!-- delete cat --}}
+                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-cat">
+                  😾 Delete Cat
+                </button>
+              </span>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+        {{!-- end inner right --}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/js/cats.js"></script>
