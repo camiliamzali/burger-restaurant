@@ -1,17 +1,18 @@
-// import our cats model
-const cats = require("../models/cats");
+// import our burger model
+const burger = require("../models/burger");
 
 // export our route definitions as a function
 module.exports = (app) => {
 
-  app.get("/", function(req, res) {
+  app.get("/", function (req, res) {
 
-    // use cat.findAll
-    cats
+    burger
       .findAll()
       // if we get to resolve()
-      .then(dbCatData => {
-        res.render("index", {catData: dbCatData})
+      .then(dbBurgerData => {
+        res.render("index", {
+          burgerData: dbBurgerData
+        })
       })
       // if we get to reject()
       .catch(err => {

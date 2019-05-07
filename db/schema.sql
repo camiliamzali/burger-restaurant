@@ -3,9 +3,9 @@ CREATE DATABASE burger_db;
 
 USE burger_db;
 
-CREATE TABLE burger (
+CREATE TABLE burgers (
   id INT(11) AUTO_INCREMENT NOT NULL,
   name VARCHAR(255) NOT NULL,
-  sleepy BOOLEAN DEFAULT false,
+  eaten BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );

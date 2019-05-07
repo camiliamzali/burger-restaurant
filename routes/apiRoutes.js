@@ -1,12 +1,12 @@
-// import our cats model
-const cats = require("../models/cats");
+// import our burger model
+const burger = require("../models/burger");
 
 module.exports = app => {
 
-  // GET all cats
-  app.get("/api/cats", function(req, res) {
-    cats.findAll()
-      .then(dbCatData => res.json(dbCatData))
+  // GET all burger
+  app.get("/api/burger", function (req, res) {
+    burger.findAll()
+      .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
         res.json(err);
@@ -14,11 +14,11 @@ module.exports = app => {
   });
 
   // create/POST a new cat
-  app.post("/api/cats", function(req, res) {
+  app.post("/api/burger", function (req, res) {
     // pass req.body into create method 
     // req.body => {name: "catty cat"}
-    cats.create(req.body)
-      .then(dbCatData => res.json(dbCatData))
+    burger.create(req.body)
+      .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
         res.json(err);
@@ -27,9 +27,9 @@ module.exports = app => {
 
 
   // get a cat by its id
-  app.get("/api/cats/:id", function(req, res) {
-    cats.findById(req.params.id)
-      .then(dbCatData => res.json(dbCatData))
+  app.get("/api/burger/:id", function (req, res) {
+    burger.findById(req.params.id)
+      .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
         res.json(err);
@@ -37,10 +37,10 @@ module.exports = app => {
   });
 
   // PUT/update a cat's sleepy to true/false by id
-  app.put("/api/cats/:id", function(req, res) {
+  app.put("/api/burger/:id", function (req, res) {
     // req.body => {sleepy: true} || {sleepy : false}
-    cats.update(req.body.sleepy, req.params.id)
-      .then(dbCatData => res.json(dbCatData))
+    burger.update(req.body.sleepy, req.params.id)
+      .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
         res.json(err);
@@ -48,9 +48,9 @@ module.exports = app => {
   });
 
   // DELETE a cat by its id
-  app.delete("/api/cats/:id", function(req, res) {
-    cats.remove(req.params.id)
-      .then(dbCatData => res.json(dbCatData))
+  app.delete("/api/burger/:id", function (req, res) {
+    burger.remove(req.params.id)
+      .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
         res.json(err);

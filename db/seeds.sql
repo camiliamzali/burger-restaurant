@@ -1,9 +1,9 @@
-USE pets_db;
+USE burger_db;
 
-INSERT INTO cats
+INSERT INTO burgers
   (name)
 VALUES
-  ("Felix"),
-  ("Garfield"),
-  ("Meowth"),
-  ("Nyan Cat");
+  ("Cheeseburger"),
+  ("Baconator"),
+  ("Hamburger"),
+  ("Mystery Burger");
