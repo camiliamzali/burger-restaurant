@@ -37,7 +37,7 @@ const findById = burgerID => {
 // INSERT INTO cats SET ? ({name: "burgerName"})
 const create = burgerObj => {
   return new Promise((resolve, reject) => {
-    connection.query('INSERT INTO cats SET ?', [burgerObj], function (err, dbBurger) {
+    connection.query('INSERT INTO burgers SET ?', [burgerObj], function (err, dbBurger) {
       if (err) {
         // this will throw to a .catch()
         return reject(err);
