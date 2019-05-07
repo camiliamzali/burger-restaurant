@@ -11,7 +11,7 @@ $(document).ready(function () {
     }
 
     $.ajax({
-        url: "/api/cats",
+        url: "/api/burger",
         method: "POST",
         data: burgerData // req.body
       })
@@ -26,13 +26,13 @@ $(document).ready(function () {
   // update burger
   $(".update-burger").on("click", function () {
     const burgerID = $(this).attr("data-id");
-    const eaten = $(this).attr("data-eaten")
+    const eaten = $(this).attr("data-eaten");
 
     $.ajax({
-        url: `/api/cats/${burgerID}`,
+        url: `/api/burger/${burgerID}`,
         method: "PUT",
         data: {
-          eaten: eaten
+          eaten: true
         } // req.body
       })
       .then(() => location.reload())

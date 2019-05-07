@@ -52,8 +52,8 @@ const create = burgerObj => {
 const update = (eatenValue, burgerID) => {
   return new Promise((resolve, reject) => {
 
-    eatenValue = (eatenValue === "true") ?
-      true : false;
+    eatenValue = (eatenValue === "false") ?
+      false : true;
 
     connection.query("UPDATE burgers SET eaten = ? WHERE id = ?", [eatenValue, burgerID], function (err, dbBurger) {
 

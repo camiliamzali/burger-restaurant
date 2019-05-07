@@ -39,17 +39,7 @@ module.exports = app => {
   // PUT/update a cat's sleepy to true/false by id
   app.put("/api/burger/:id", function (req, res) {
     // req.body => {sleepy: true} || {sleepy : false}
-    burger.update(req.body.sleepy, req.params.id)
-      .then(dbBurgerData => res.json(dbBurgerData))
-      .catch(err => {
-        console.log(err);
-        res.json(err);
-      });
-  });
-
-  // DELETE a cat by its id
-  app.delete("/api/burger/:id", function (req, res) {
-    burger.remove(req.params.id)
+    burger.update(req.body.eaten, req.params.id)
       .then(dbBurgerData => res.json(dbBurgerData))
       .catch(err => {
         console.log(err);
